@@ -4,6 +4,7 @@ using namespace std;
 #include"../lib/strongly_connected_component.h"
 
 int main() {
+  // https://atcoder.jp/contests/practice2/tasks/practice2_g
   int n,m; cin >> n >> m;
   vector<vector<int>> adj(n);
   for(int i=0;i<m;++i) {
