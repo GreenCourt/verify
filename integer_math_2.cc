@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#include"../lib/saturating.h"
+#include"../lib/integer_math.h"
 
 int main() {
   // https://atcoder.jp/contests/abc169/tasks/abc169_b
