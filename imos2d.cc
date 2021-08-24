@@ -12,8 +12,9 @@ int main() {
     cin >> lx >> ly >> rx >> ry;
     A[i] = {lx, ly, rx, ry};
   }
-  auto imos = Imos2D(1000, 1000, A);
+  const int x_max=999, y_max=999;
+  auto imos = Imos2D(x_max, y_max, A);
   vector<int> ans(n+1);
-  for(int x = 0; x<=1000; ++x) for(int y = 0; y<=1000; ++y) ans[imos[x][y]]++;
+  for(int x = 0; x<=x_max; ++x) for(int y = 0; y<=y_max; ++y) ans[imos[x][y]]++;
   for(int i=1; i<=n; ++i) cout << ans[i] << '\n'; 
 }
