@@ -7,8 +7,7 @@ int main() {
   // https://atcoder.jp/contests/abc169/tasks/abc169_d
   long long N;
   cin >> N;
-  sieve s(ceil(sqrt(N)));
-  auto factors = s.factors(N);
+  auto factors = prime_factors(N);
 
   int ans = 0;
   for(auto f : factors) {
