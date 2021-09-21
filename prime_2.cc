@@ -14,8 +14,7 @@ int main() {
     for(auto f : factors) for(int i=0; i<f.second; i++) cout << " " << f.first;
   }
   else {
-    sieve s(ceil(sqrt(n)));
-    auto factors = s.factors(n);
+    auto factors = prime_factors(n);
     for(auto f : factors) for(int i=0; i<f.second; i++) cout << " " << f.first;
   }
   cout << endl;
