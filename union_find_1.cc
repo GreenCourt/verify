@@ -10,7 +10,7 @@ int main() {
 
   while(q--) {
     int t,u,v; cin >> t >> u >> v;
-    if(t) cout << uf.find(u,v) << endl;
+    if(t) cout << uf.same(u,v) << endl;
     else uf.unite(u,v);
   }
 }
