@@ -7,5 +7,5 @@ int main() {
   // https://atcoder.jp/contests/abc156/tasks/abc156_d
   int n,a,b;
   cin >> n >> a >> b;
-  cout << modint(2).pow(n) - 1 - choose(n,a) - choose(n,b) << endl;
+  cout << modint(2).pow(n) - 1 - modint::choose(n,a) - modint::choose(n,b) << endl;
 }
