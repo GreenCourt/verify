@@ -7,5 +7,5 @@ int main() {
   // https://atcoder.jp/contests/abc021/tasks/abc021_d
   int n,k; cin >> n >> k;
   n = n+k-1; /* allow duplicates */
-  cout << choose(n,k) << endl; 
+  cout << modint::choose(n,k) << endl; 
 }
