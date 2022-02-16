@@ -10,21 +10,18 @@ def chdir(target_dir):
     finally:
         os.chdir(cwd)
 
-def rec(src, f_dst):
+pattern = re.compile('#include\s*".+"')
+def rec(src):
     with open(src, "r") as f_src:
         for line in f_src:
             if pattern.match(line):
                 with chdir(os.path.dirname(os.path.abspath(src))):
-                    rec(line.split('"')[1], f_dst)
+                    rec(line.split('"')[1])
             else:
-                f_dst.write(line)
+                print(line, end="")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('src')
-    parser.add_argument('--output', default='_.cc')
     args = parser.parse_args()
-    pattern = re.compile('#include\s*".+"')
-    with open(args.output, "w") as f:
-        rec(args.src, f)
-    print("saved to", args.output)
+    rec(args.src)
