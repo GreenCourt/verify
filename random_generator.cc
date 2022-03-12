@@ -74,10 +74,10 @@ int main(int argc, char *argv[]) {
       vector edges = random_graph(n,m);
       assert(edges.size() == m);
       set<pair<int,int>> s;
-      for(int i=0; i<m; ++i) {
-        assert(0 <= edges[i].first < n);
-        assert(0 <= edges[i].second < n);
-        s.insert(edges[i]);
+      for(auto [u,v] : edges) {
+        assert(0 <= u < n);
+        assert(0 <= v < n);
+        s.emplace(min(u,v), max(u,v));
       }
       assert(s.size() == m);
     }
@@ -160,6 +160,33 @@ int main(int argc, char *argv[]) {
       }
       for(int i=0; i<n; ++i) assert(visited[i]);
     }
+
+    {
+      int n = randint(1, 20);
+      int m = randint(n-1, n*(n-1)/2);
+      vector edges = random_connected_graph(n,m);
+      assert(edges.size() == m);
+
+      vector<vector<int>> adj(n);
+      set<pair<int,int>> s;
+      for(auto [u,v] : edges) {
+        assert(0 <= u < n);
+        assert(0 <= v < n);
+        s.emplace(min(u,v), max(u,v));
+        adj[u].push_back(v), adj[v].push_back(u); 
+      }
+      assert(s.size() == m);
+      vector visited(n, false);
+      queue<int> q;
+      q.push(0);
+      while(q.size()) {
+        int v = q.front(); q.pop();
+        visited[v] = true;
+        for(int u:adj[v]) if(!visited[u]) q.push(u);
+      }
+      for(int i=0; i<n; ++i) assert(visited[i]);
+    }
+
     cerr << "\r\x1b[2K" << ii;
   }
   cerr << endl;
