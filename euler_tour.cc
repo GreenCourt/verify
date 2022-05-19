@@ -14,5 +14,5 @@ int main() {
   }
   for(int i=0; i<n; ++i) sort(adj[i].begin(), adj[i].end());
   EulerTour et(adj,0);
-  for(int i=0; i<et.length; ++i) cout << 1+et.tour[i] << " \n"[i==et.length-1];
+  for(int i=0; i<et.tour.size(); ++i) cout << 1+et.tour[i] << " \n"[i==et.tour.size()-1];
 }
