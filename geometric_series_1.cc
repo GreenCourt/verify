@@ -1,15 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#include"../lib/random_test.h"
 #include"../lib/geometric_series.h"
 
 int main() {
-  /* local test */
+  mt19937_64 rnd = mt19937_64(random_device()());
+
   for(int k=0; k<10000; ++k) {
-    long long first = randint(1, 20000);
-    long long diff = randint(1,10000);
-    long long n = randint(1, 1000);
+    long long first = uniform_int_distribution<long long>(1, 20000)(rnd);
+    long long diff = uniform_int_distribution<long long>(1, 10000)(rnd);
+    long long n = uniform_int_distribution<long long>(1, 1000)(rnd);
     long long last = first + (n-1) * diff;
     long long ans = 0;
     for(int i=0; i<n; ++i) ans += first + i*diff;
