@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#include"../lib/random_generator.h"
+#include"../lib/random_test.h"
 
 int main(int argc, char *argv[]) {
   rnd.seed(argc > 1 ? stoi(argv[1]) : random_device()());
