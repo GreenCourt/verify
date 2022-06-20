@@ -132,7 +132,7 @@ int main(int argc, char *argv[]) {
           vector visited(n,false);
           visited[i] = true;
           for(int u : adj[i]) visited[u] = true;
-          for(int i=0; i<n; ++i) assert(visited[i]);
+          for(int j=0; j<n; ++j) assert(visited[j]);
         }
         else {
           assert(adj[i].size() == 1);
