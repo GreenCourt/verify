@@ -75,8 +75,8 @@ int main(int argc, char *argv[]) {
       assert(edges.size() == m);
       set<pair<int,int>> s;
       for(auto [u,v] : edges) {
-        assert(0 <= u < n);
-        assert(0 <= v < n);
+        assert(0 <= u && u < n);
+        assert(0 <= v && v < n);
         s.emplace(min(u,v), max(u,v));
       }
       assert(s.size() == m);
@@ -170,8 +170,8 @@ int main(int argc, char *argv[]) {
       vector<vector<int>> adj(n);
       set<pair<int,int>> s;
       for(auto [u,v] : edges) {
-        assert(0 <= u < n);
-        assert(0 <= v < n);
+        assert(0 <= u && u < n);
+        assert(0 <= v && v < n);
         s.emplace(min(u,v), max(u,v));
         adj[u].push_back(v), adj[v].push_back(u); 
       }

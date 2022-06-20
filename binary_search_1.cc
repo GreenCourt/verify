@@ -11,7 +11,7 @@ int main() {
 
   auto f = [&](long long x) {
     if(x==0) return false;
-    int kk = k;
+    long long kk = k;
     for(int i=0; i<n; ++i) kk -= (a[i] + x-1) / x - 1;
     return kk >= 0;
   };

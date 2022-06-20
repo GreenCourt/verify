@@ -17,7 +17,7 @@ int main() {
   int n; cin >> n >> m;
   RerootingDP<S, V, E, opS, opV, opE, e> r(n);
   for(int i=0; i<n-1; ++i) {
-    int s,t,w; cin >> s >> t; --s,--t;
+    int s,t; cin >> s >> t; --s,--t;
     r.add_edge(s, t);
     r.add_edge(t, s);
   }
