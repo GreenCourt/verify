@@ -10,7 +10,7 @@ int main() {
   for(int i=0; i<n; ++i) cin >> a[i];
   for(int i=0; i<n; ++i) cin >> b[i];
 
-  vector<int> ha(n), hb(n);
+  vector<uint64_t> ha(n), hb(n);
   ZobristHashSet<int> za, zb;
 
   for(int i=0; i<n; ++i) {
